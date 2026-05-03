@@ -44,20 +44,27 @@ A premium technical redesign of the Vega Educational Associates wiki, featuring 
 
 This repository is configured for automatic deployment to **GitHub Pages** via GitHub Actions. 
 
-### ⚠️ IMPORTANT: Fix "Resource not accessible" or "Not Found" errors:
-If your GitHub Action fails with `HttpError: Resource not accessible by integration`, you **MUST** update these settings in your GitHub repository:
+### ⚠️ IMPORTANT: Fix Deployment Errors
+If your GitHub Action fails with `HttpError: Resource not accessible` or `Not Found`, follow these EXACT steps:
 
-1. **Enable GitHub Actions for Pages:**
+1. **Enable GitHub Actions for Pages (CRITICAL):**
    - Go to your repository on GitHub.
-   - Navigate to **Settings** > **Pages**.
-   - Under **Build and deployment** > **Source**, change the dropdown from "Deploy from a branch" to **"GitHub Actions"**.
+   - Navigate to **Settings** (top tab) > **Pages** (left sidebar).
+   - Under **Build and deployment** > **Source**, click the dropdown and select **"GitHub Actions"**.
+   - *Note: If you don't see this option or it's already selected, try toggling it back and forth.*
 
-2. **Grant Write Permissions to Actions:**
+2. **Grant Permissions to Actions:**
    - Navigate to **Settings** > **Actions** > **General**.
-   - Scroll down to **Workflow permissions**.
-   - Select **"Read and write permissions"** and click **Save**.
+   - Scroll to the bottom to **Workflow permissions**.
+   - Select **"Read and write permissions"**.
+   - Check the box **"Allow GitHub Actions to create and approve pull requests"** (optional but recommended).
+   - Click **Save**.
 
-After changing these settings, push a new commit or manually re-run the failed workflow.
+3. **Check Repository Visibility:**
+   - If your repository is **Private**, GitHub Pages requires a GitHub Pro, Team, or Enterprise account.
+   - If you are on a free account, you may need to make the repository **Public** to use GitHub Pages.
+
+After fixing these, go to the **Actions** tab and **Re-run** the failed job, or push a new commit.
 
 ---
 © 2025 Michael A. Breslow | Vega Educational Associates

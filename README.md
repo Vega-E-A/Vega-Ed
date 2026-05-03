@@ -44,12 +44,20 @@ A premium technical redesign of the Vega Educational Associates wiki, featuring 
 
 This repository is configured for automatic deployment to **GitHub Pages** via GitHub Actions. 
 
-### Required GitHub Settings:
-To fix "Not Found" errors during deployment:
-1. Go to your repository on GitHub.
-2. Navigate to **Settings** > **Pages**.
-3. Under **Build and deployment** > **Source**, select **GitHub Actions**.
-4. Push changes to the `main` branch or manually trigger the "Deploy to GitHub Pages" workflow.
+### ⚠️ IMPORTANT: Fix "Resource not accessible" or "Not Found" errors:
+If your GitHub Action fails with `HttpError: Resource not accessible by integration`, you **MUST** update these settings in your GitHub repository:
+
+1. **Enable GitHub Actions for Pages:**
+   - Go to your repository on GitHub.
+   - Navigate to **Settings** > **Pages**.
+   - Under **Build and deployment** > **Source**, change the dropdown from "Deploy from a branch" to **"GitHub Actions"**.
+
+2. **Grant Write Permissions to Actions:**
+   - Navigate to **Settings** > **Actions** > **General**.
+   - Scroll down to **Workflow permissions**.
+   - Select **"Read and write permissions"** and click **Save**.
+
+After changing these settings, push a new commit or manually re-run the failed workflow.
 
 ---
 © 2025 Michael A. Breslow | Vega Educational Associates
